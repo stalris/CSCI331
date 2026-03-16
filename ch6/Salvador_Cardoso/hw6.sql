@@ -29,7 +29,7 @@ go
  */
 
 select
- "(2)"
+ '(2)'
 go
 
   select
