@@ -1,5 +1,5 @@
 Github for CSCI 331
 
 james receipts for acm and medium: 
-[View my Document](./james-acm-receipt.pdf)
-[View my Document](./james-medium-receipt.pdf)
+[acm](/ACM_MEDIUM/James/james-acm-receipt.pdf)
+[medium](/ACM_MEDIUM/James/james-medium-receipt.pdf)
