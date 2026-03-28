@@ -7,7 +7,7 @@ GO
 -----------------------------------------------------------------
 Mystery #1: The Big Spender
 -----------------------------------------------------------------
-GOAL: Find and extract customers who are spending high amounts of money
+GOAL: Find and extract the  customer who spent the most amount of money
 Tables involved: Sales.Customer, Sales.Order, Sales.OrderDetail
 */
 
@@ -50,7 +50,7 @@ ORDER BY TotalSpending DESC
     GROUP BY c.CustomerId, c.CustomerContactName
 )
 
-SELECT TOP(5) *
+SELECT TOP(1) *
 FROM TotalSpendingPerCustomer
 ORDER BY TotalSpending DESC
 
