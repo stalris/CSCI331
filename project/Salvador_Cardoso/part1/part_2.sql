@@ -65,7 +65,7 @@ OrderId     EmployeeId  CustomerId  CustomerCompanyName                      Ord
  */
 
 /*
- *  (2.3) Now that the employee-customer order relationships have been identified, bring in the order detail rows so the student can see where the revenue data comes from. 
+ *  (2.3) Now that the employee-customer order relationships have been identified, bring in the order detail rows so management can see where the revenue data comes from. 
  *  At this stage, the goal is still inspection rather than summarization. 
  *  Include the line-item values so that each employee-customer order can be traced to the underlying quantities and monetary amounts.
  *
@@ -114,6 +114,12 @@ EmployeeId  CustomerId  CustomerCompanyName                      CustomerRevenue
 
 (464 rows affected)
 
+*/
+
+/*
+ *  Query here
+ */
+
 
 /*
  *  Answers:
@@ -155,7 +161,24 @@ EmployeeId  CustomerId  CustomerCompanyName                      CustomerRevenue
  *    O.OrderId;
  *
  *  (2.3)
- *
+
+ *  SELECT
+ *    O.OrderId,
+ *    O.EmployeeId,
+ *    C.CustomerId,
+ *    C.CustomerCompanyName,
+ *    O.OrderDate
+ *  FROM 
+ *    Sales.[Order] AS O
+ *  INNER JOIN 
+ *    Sales.Customer AS C
+ *  ON
+ *    O.CustomerId = C.CustomerId
+ *  ORDER BY
+ *    O.EmployeeId,
+ *    C.CustomerId,
+ *    O.OrderId;
+ 
  *  SELECT
  *    O.OrderId,
  *    O.EmployeeId,
