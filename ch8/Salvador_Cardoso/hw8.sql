@@ -25,7 +25,7 @@ CREATE TABLE dbo.Customers
 INSERT INTO
   dbo.Customers (CustomerID, CompanyName, Country, Region, City)
 Values
-  (100, 'Coho Winery', 'USA', 'WA', 'Redmond')
+  (100, 'Coho Winery', 'USA', 'WA', 'Redmond');
 
 
 /*
@@ -34,7 +34,7 @@ Values
  * Insert into the dbo.Customers table all customers from Sales.Customers who placed orders.
  */
 INSERT INTO 
-  dbo.Customers
+  dbo.Customers (CustomerID, CompanyName, Country, Region, City)
 (
 SELECT
   CustomerId, 
