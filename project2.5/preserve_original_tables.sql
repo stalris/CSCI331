@@ -60,6 +60,17 @@ if object_id(N'Normalized._Original_Data_Model', N'u') is null
   End;
 Go
 
+IF OBJECT_ID(N'Normalized._Original_Data_Sales', N'U') IS NULL
+BEGIN
+    SELECT
+        *
+    INTO
+        [Normalized].[_Original_Data_Sales]
+    FROM
+        [Data].[Sales];
+END;
+GO
+
 if object_id(N'Normalized._Original_Data_SalesDetails', N'u') is null
   Begin
     select

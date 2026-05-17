@@ -66,21 +66,18 @@ CREATE TABLE [Normalized].[Customer]
     Town         [UserDefinedTypes].[TownName] NOT NULL,
     PostalCode   [UserDefinedTypes].[PostalCode] NULL,
     CountryId    [UserDefinedTypes].[SurrogateBigIntKey] NOT NULL,
-    IsReseller   [UserDefinedTypes].[BooleanFlag] NOT NULL,
-    IsCreditRisk [UserDefinedTypes].[BooleanFlag] NOT NULL,
+    IsReseller   [UserDefinedTypes].[BooleanFlag] NOT NULL
+        CONSTRAINT [DF_Customer_IsReseller] Default (0),
+    IsCreditRisk [UserDefinedTypes].[BooleanFlag] NOT NULL
+        CONSTRAINT [DF_Customer_IsCreditRisk] DEFAULT (0),
+
 
     CONSTRAINT [PK_Customer]
         PRIMARY KEY CLUSTERED ([CustomerId]),
 
     CONSTRAINT [FK_Customer_Country]
         FOREIGN KEY ([CountryId])
-        REFERENCES [Normalized].[Country]([CountryId]),
-
-    CONSTRAINT [DF_Customer_IsReseller]
-        DEFAULT (0) FOR IsReseller,
-
-    CONSTRAINT [DF_Customer_IsCreditRisk]
-        DEFAULT (0) FOR IsCreditRisk
+        REFERENCES [Normalized].[Country]([CountryId])
 );
 
 /*
@@ -146,9 +143,12 @@ CREATE TABLE [Normalized].[Stock]
     StockCode       [UserDefinedTypes].[MediumCode] NOT NULL,
     ModelId         [UserDefinedTypes].[SurrogateSmallIntKey] NOT NULL,
     Cost            [UserDefinedTypes].[MoneyAmount] NOT NULL,
-    RepairsCost     [UserDefinedTypes].[MoneyAmount] NOT NULL,
-    PartsCost       [UserDefinedTypes].[MoneyAmount] NOT NULL,
-    TransportInCost [UserDefinedTypes].[MoneyAmount] NOT NULL,
+    RepairsCost     [UserDefinedTypes].[MoneyAmount] NOT NULL
+        CONSTRAINT [DF_Stock_RepairsCost] DEFAULT (0),
+    PartsCost       [UserDefinedTypes].[MoneyAmount] NOT NULL
+        CONSTRAINT [DF_Stock_PartsCost] DEFAULT (0),
+    TransportInCost [UserDefinedTypes].[MoneyAmount] NOT NULL
+        CONSTRAINT [DF_Stock_TransportInCost] DEFAULT (0),
     IsRHD           [UserDefinedTypes].[BooleanFlag] NOT NULL,
     Color           [UserDefinedTypes].[MediumName] NOT NULL,
     BuyerComments   [UserDefinedTypes].[Comment] NULL,
@@ -171,16 +171,7 @@ CREATE TABLE [Normalized].[Stock]
             AND RepairsCost >= 0
             AND PartsCost >= 0
             AND TransportInCost >= 0
-        ),
-
-    CONSTRAINT [DF_Stock_RepairsCost]
-        DEFAULT (0) FOR RepairsCost,
-
-    CONSTRAINT [DF_Stock_PartsCost]
-        DEFAULT (0) FOR PartsCost,
-
-    CONSTRAINT [DF_Stock_TransportInCost]
-        DEFAULT (0) FOR TransportInCost
+        )
 );
 
 /*
@@ -216,7 +207,8 @@ CREATE TABLE [Normalized].[SalesDetails]
     LineItemNumber    [UserDefinedTypes].[LineItemNumber] NOT NULL,
     StockId           [UserDefinedTypes].[SurrogateBigIntKey] NOT NULL,
     SalePrice         [UserDefinedTypes].[MoneyAmount] NOT NULL,
-    LineItemDiscount  [UserDefinedTypes].[MoneyAmount] NOT NULL,
+    LineItemDiscount  [UserDefinedTypes].[MoneyAmount] NOT NULL
+        CONSTRAINT [DF_SalesDetails_LineItemDiscount] DEFAULT (0),
 
     CONSTRAINT [PK_SalesDetails]
         PRIMARY KEY CLUSTERED ([SalesDetailsId]),
@@ -236,8 +228,5 @@ CREATE TABLE [Normalized].[SalesDetails]
         CHECK (
             SalePrice >= 0
             AND LineItemDiscount >= 0
-        ),
-
-    CONSTRAINT [DF_SalesDetails_LineItemDiscount]
-        DEFAULT (0) FOR LineItemDiscount
+        )
 );
