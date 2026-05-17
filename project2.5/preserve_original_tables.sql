@@ -4,9 +4,9 @@ Go
 /*
  *  Make a schema to test the changes, before moving everything to the original schema.
  */
-if schema_id(n'Normalized') is null
+if schema_id(N'Normalized') is null
   Begin
-    exec(n'
+    exec(N'
       create schema [Normalized];
     ');
   End;
@@ -16,7 +16,7 @@ Go
  *  Make a copy of each of the original tables.
  */
 
-if object_id(n'Normalized._Original_Data_Country', n'u') is null
+if object_id(N'Normalized._Original_Data_Country', N'u') is null
   Begin
     select
       *
@@ -27,7 +27,7 @@ if object_id(n'Normalized._Original_Data_Country', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Data_Customer', n'u') is null
+if object_id(N'Normalized._Original_Data_Customer', N'u') is null
   Begin
     select
       *
@@ -38,7 +38,7 @@ if object_id(n'Normalized._Original_Data_Customer', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Data_Make', n'u') is null
+if object_id(N'Normalized._Original_Data_Make', N'u') is null
   Begin
     select
       *
@@ -49,7 +49,7 @@ if object_id(n'Normalized._Original_Data_Make', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Data_Model', n'u') is null
+if object_id(N'Normalized._Original_Data_Model', N'u') is null
   Begin
     select
       *
@@ -60,7 +60,7 @@ if object_id(n'Normalized._Original_Data_Model', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Data_SalesDetails', n'u') is null
+if object_id(N'Normalized._Original_Data_SalesDetails', N'u') is null
   Begin
     select
       *
@@ -71,7 +71,7 @@ if object_id(n'Normalized._Original_Data_SalesDetails', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Data_Stock', n'u') is null
+if object_id(N'Normalized._Original_Data_Stock', N'u') is null
   Begin
     select
       *
@@ -82,7 +82,7 @@ if object_id(n'Normalized._Original_Data_Stock', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Data_SalesByCountry', n'u') is null
+if object_id(N'Normalized._Original_Data_SalesByCountry', N'u') is null
   Begin
     select
       *
@@ -93,7 +93,7 @@ if object_id(n'Normalized._Original_Data_SalesByCountry', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Data_PivotTable', n'u') is null
+if object_id(N'Normalized._Original_Data_PivotTable', N'u') is null
   Begin
     select
       *
@@ -104,7 +104,7 @@ if object_id(n'Normalized._Original_Data_PivotTable', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_DataTransfer_Sales2015', n'u') is null
+if object_id(N'Normalized._Original_DataTransfer_Sales2015', N'u') is null
   Begin
     select
       *
@@ -115,7 +115,7 @@ if object_id(n'Normalized._Original_DataTransfer_Sales2015', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_DataTransfer_Sales2016', n'u') is null
+if object_id(N'Normalized._Original_DataTransfer_Sales2016', N'u') is null
   Begin
     select
       *
@@ -126,7 +126,7 @@ if object_id(n'Normalized._Original_DataTransfer_Sales2016', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_DataTransfer_Sales2017', n'u') is null
+if object_id(N'Normalized._Original_DataTransfer_Sales2017', N'u') is null
   Begin
     select
       *
@@ -137,7 +137,7 @@ if object_id(n'Normalized._Original_DataTransfer_Sales2017', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_DataTransfer_Sales2018', n'u') is null
+if object_id(N'Normalized._Original_DataTransfer_Sales2018', N'u') is null
   Begin
     select
       *
@@ -148,7 +148,7 @@ if object_id(n'Normalized._Original_DataTransfer_Sales2018', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Output_StockPrices', n'u') is null
+if object_id(N'Normalized._Original_Output_StockPrices', N'u') is null
   Begin
     select
       *
@@ -159,7 +159,7 @@ if object_id(n'Normalized._Original_Output_StockPrices', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Reference_Budget', n'u') is null
+if object_id(N'Normalized._Original_Reference_Budget', N'u') is null
   Begin
     select
       *
@@ -170,7 +170,7 @@ if object_id(n'Normalized._Original_Reference_Budget', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Reference_Forex', n'u') is null
+if object_id(N'Normalized._Original_Reference_Forex', N'u') is null
   Begin
     select
       *
@@ -181,7 +181,7 @@ if object_id(n'Normalized._Original_Reference_Forex', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Reference_MarketingCategories', n'u') is null
+if object_id(N'Normalized._Original_Reference_MarketingCategories', N'u') is null
   Begin
     select
       *
@@ -192,7 +192,7 @@ if object_id(n'Normalized._Original_Reference_MarketingCategories', n'u') is nul
   End;
 Go
 
-if object_id(n'Normalized._Original_Reference_MarketingInformation', n'u') is null
+if object_id(N'Normalized._Original_Reference_MarketingInformation', N'u') is null
   Begin
     select
       *
@@ -203,7 +203,7 @@ if object_id(n'Normalized._Original_Reference_MarketingInformation', n'u') is nu
   End;
 Go
 
-if object_id(n'Normalized._Original_Reference_SalesBudgets', n'u') is null
+if object_id(N'Normalized._Original_Reference_SalesBudgets', N'u') is null
   Begin
     select
       *
@@ -214,7 +214,7 @@ if object_id(n'Normalized._Original_Reference_SalesBudgets', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Reference_SalesCategory', n'u') is null
+if object_id(N'Normalized._Original_Reference_SalesCategory', N'u') is null
   Begin
     select
       *
@@ -225,7 +225,7 @@ if object_id(n'Normalized._Original_Reference_SalesCategory', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Reference_Staff', n'u') is null
+if object_id(N'Normalized._Original_Reference_Staff', N'u') is null
   Begin
     select
       *
@@ -236,7 +236,7 @@ if object_id(n'Normalized._Original_Reference_Staff', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Reference_StaffHierarchy', n'u') is null
+if object_id(N'Normalized._Original_Reference_StaffHierarchy', N'u') is null
   Begin
     select
       *
@@ -247,7 +247,7 @@ if object_id(n'Normalized._Original_Reference_StaffHierarchy', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_Reference_YearlySales', n'u') is null
+if object_id(N'Normalized._Original_Reference_YearlySales', N'u') is null
   Begin
     select
       *
@@ -258,7 +258,7 @@ if object_id(n'Normalized._Original_Reference_YearlySales', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_SourceData_SalesInPounds', n'u') is null
+if object_id(N'Normalized._Original_SourceData_SalesInPounds', N'u') is null
   Begin
     select
       *
@@ -269,7 +269,7 @@ if object_id(n'Normalized._Original_SourceData_SalesInPounds', n'u') is null
   End;
 Go
 
-if object_id(n'Normalized._Original_SourceData_SalesText', n'u') is null
+if object_id(N'Normalized._Original_SourceData_SalesText', N'u') is null
   Begin
     select
       *

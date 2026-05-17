@@ -13,7 +13,7 @@ GO
  *    OBJECT_ID(N'object_name', N'object_type')
  *
  */
-if object_id(n'Data.Country_Original', n'u') is null
+if object_id(N'Data.Country_Original', N'u') is null
   Begin
     select 
       *
@@ -30,30 +30,30 @@ if object_id(n'Data.Country_Original', n'u') is null
  *    SCHEMA_ID(N'schema_name')
  *
  */
-if schema_id(n'UserDefinedTypes') is null
+if schema_id(N'UserDefinedTypes') is null
   Begin
 
     -- I think create schema statements need to be the first in a batch.
     -- create schema [UserDefinedTypes];
 
     -- Think this creates a... dynamic sql context.
-    exec(n'create schema [UserDefinedTypes];');
+    exec(N'create schema [UserDefinedTypes];');
   End;
 GO
 
-if schema_id(n'Subroutines') is null
+if schema_id(N'Subroutines') is null
   Begin
-    -- create schema [n'Subroutines'];
+    -- create schema [N'Subroutines'];
 
-    exec(n'create schema [Subroutines];');
+    exec(N'create schema [Subroutines];');
   End;
 GO
 
-if schema_id(n'Process') is null
+if schema_id(N'Process') is null
   Begin
-    -- create schema [n'Subroutines'];
+    -- create schema [N'Subroutines'];
 
-    exec(n'create schema [Process];');
+    exec(N'create schema [Process];');
   End;
 GO
 
@@ -70,9 +70,9 @@ GO
  *  (1) Keys
  */
 
-if type_id(n'UserDefinedTypes.SurrogateIntKey') is null
+if type_id(N'UserDefinedTypes.SurrogateIntKey') is null
   Begin
-    exec(n'
+    exec(N'
       create type 
         [UserDefinedTypes].[SurrogateIntKey]
       from    
@@ -80,9 +80,9 @@ if type_id(n'UserDefinedTypes.SurrogateIntKey') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.SurrogateSmallIntKey') is null
+if type_id(N'UserDefinedTypes.SurrogateSmallIntKey') is null
   Begin
-    exec(n'
+    exec(N'
       create type 
         [UserDefinedTypes].[SurrogateSmallIntKey]
       from    
@@ -90,9 +90,9 @@ if type_id(n'UserDefinedTypes.SurrogateSmallIntKey') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.SurrogateBigIntKey') is null
+if type_id(N'UserDefinedTypes.SurrogateBigIntKey') is null
   Begin
-    exec(n'
+    exec(N'
       create type 
         [UserDefinedTypes].[SurrogateBigIntKey]
       from    
@@ -104,9 +104,9 @@ if type_id(n'UserDefinedTypes.SurrogateBigIntKey') is null
  *  (2) Identifiers and code.
  */
 
-if type_id(n'UserDefinedTypes.TinyCode') is null
+if type_id(N'UserDefinedTypes.TinyCode') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[TinyCode]
       from
@@ -114,9 +114,9 @@ if type_id(n'UserDefinedTypes.TinyCode') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.SmallCode') is null
+if type_id(N'UserDefinedTypes.SmallCode') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[SmallCode]
       from
@@ -124,9 +124,9 @@ if type_id(n'UserDefinedTypes.SmallCode') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.MediumCode') is null
+if type_id(N'UserDefinedTypes.MediumCode') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[MediumCode]
       from
@@ -134,9 +134,9 @@ if type_id(n'UserDefinedTypes.MediumCode') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.ISOAlpha2') is null
+if type_id(N'UserDefinedTypes.ISOAlpha2') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[ISOAlpha2]
       from
@@ -144,9 +144,9 @@ if type_id(n'UserDefinedTypes.ISOAlpha2') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.ISOAlpha3') is null
+if type_id(N'UserDefinedTypes.ISOAlpha3') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[ISOAlpha3]
       from
@@ -158,9 +158,9 @@ if type_id(n'UserDefinedTypes.ISOAlpha3') is null
  *  (3) Names and descriptions.
  */
 
-if type_id(n'UserDefinedTypes.ShortName') is null
+if type_id(N'UserDefinedTypes.ShortName') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[ShortName]
       from
@@ -168,9 +168,9 @@ if type_id(n'UserDefinedTypes.ShortName') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.MediumName') is null
+if type_id(N'UserDefinedTypes.MediumName') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[MediumName]
       from
@@ -178,9 +178,9 @@ if type_id(n'UserDefinedTypes.MediumName') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.LongName') is null
+if type_id(N'UserDefinedTypes.LongName') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[LongName]
       from
@@ -188,9 +188,9 @@ if type_id(n'UserDefinedTypes.LongName') is null
     ');
   End;
  
-if type_id(n'UserDefinedTypes.Comment') is null
+if type_id(N'UserDefinedTypes.Comment') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[Comment]
       from
@@ -199,9 +199,9 @@ if type_id(n'UserDefinedTypes.Comment') is null
   End;
 
 
-if type_id(n'UserDefinedTypes.LongComment') is null
+if type_id(N'UserDefinedTypes.LongComment') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[LongComment]
       from
@@ -213,9 +213,9 @@ if type_id(n'UserDefinedTypes.LongComment') is null
  *  (4) Address and locations.
  */
 
-if type_id(n'UserDefinedTypes.AddressLine') is null
+if type_id(N'UserDefinedTypes.AddressLine') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[AddressLine]
       from
@@ -223,9 +223,9 @@ if type_id(n'UserDefinedTypes.AddressLine') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.TownName') is null
+if type_id(N'UserDefinedTypes.TownName') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[TownName]
       from
@@ -233,9 +233,9 @@ if type_id(n'UserDefinedTypes.TownName') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.PostalCode') is null
+if type_id(N'UserDefinedTypes.PostalCode') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[PostalCode]
       from
@@ -247,9 +247,9 @@ if type_id(n'UserDefinedTypes.PostalCode') is null
  *  (5) Numbers.
  */
 
-if type_id(n'UserDefinedTypes.YearNumber') is null
+if type_id(N'UserDefinedTypes.YearNumber') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[YearNumber]
       from
@@ -257,9 +257,9 @@ if type_id(n'UserDefinedTypes.YearNumber') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.MonthNumber') is null
+if type_id(N'UserDefinedTypes.MonthNumber') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[MonthNumber]
       from
@@ -267,9 +267,9 @@ if type_id(n'UserDefinedTypes.MonthNumber') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.LineItemNumber') is null
+if type_id(N'UserDefinedTypes.LineItemNumber') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[LineItemNumber]
       from
@@ -277,9 +277,9 @@ if type_id(n'UserDefinedTypes.LineItemNumber') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.MoneyAmount') is null
+if type_id(N'UserDefinedTypes.MoneyAmount') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[MoneyAmount]
       from
@@ -287,9 +287,9 @@ if type_id(n'UserDefinedTypes.MoneyAmount') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.Percentage') is null
+if type_id(N'UserDefinedTypes.Percentage') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[Percentage]
       from
@@ -301,9 +301,9 @@ if type_id(n'UserDefinedTypes.Percentage') is null
  *  (6) Time
  */
 
-if type_id(n'UserDefinedTypes.DateValue') is null
+if type_id(N'UserDefinedTypes.DateValue') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[DateValue]
       from
@@ -311,18 +311,18 @@ if type_id(n'UserDefinedTypes.DateValue') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.DateTimeValue') is null
+if type_id(N'UserDefinedTypes.DateTimeValue') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[DateTimeValue]
       from
         datetime not null;
     ');
   End;
-if type_id(n'UserDefinedTypes.TimeValue') is null
+if type_id(N'UserDefinedTypes.TimeValue') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[TimeValue]
       from
@@ -334,9 +334,9 @@ if type_id(n'UserDefinedTypes.TimeValue') is null
  *  (7) etc.
  */
 
-if type_id(n'UserDefinedTypes.BooleanFlag') is null
+if type_id(N'UserDefinedTypes.BooleanFlag') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[BooleanFlag]
       from
@@ -344,9 +344,9 @@ if type_id(n'UserDefinedTypes.BooleanFlag') is null
     ');
   End;
 
-if type_id(n'UserDefinedTypes.ImageBinary') is null
+if type_id(N'UserDefinedTypes.ImageBinary') is null
   Begin
-    exec(n'
+    exec(N'
       create type
         [UserDefinedTypes].[ImageBinary]
       from
